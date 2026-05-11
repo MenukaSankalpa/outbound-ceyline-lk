@@ -9,16 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as InquirycopyRouteImport } from './routes/inquiry copy'
 import { Route as InquiryRouteImport } from './routes/inquiry'
 import { Route as DestinationsRouteImport } from './routes/destinations'
 import { Route as IndexRouteImport } from './routes/index'
 
-const InquirycopyRoute = InquirycopyRouteImport.update({
-  id: '/inquiry copy',
-  path: '/inquiry copy',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const InquiryRoute = InquiryRouteImport.update({
   id: '/inquiry',
   path: '/inquiry',
@@ -39,45 +33,34 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/destinations': typeof DestinationsRoute
   '/inquiry': typeof InquiryRoute
-  '/inquiry copy': typeof InquirycopyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/destinations': typeof DestinationsRoute
   '/inquiry': typeof InquiryRoute
-  '/inquiry copy': typeof InquirycopyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/destinations': typeof DestinationsRoute
   '/inquiry': typeof InquiryRoute
-  '/inquiry copy': typeof InquirycopyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/destinations' | '/inquiry' | '/inquiry copy'
+  fullPaths: '/' | '/destinations' | '/inquiry'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/destinations' | '/inquiry' | '/inquiry copy'
-  id: '__root__' | '/' | '/destinations' | '/inquiry' | '/inquiry copy'
+  to: '/' | '/destinations' | '/inquiry'
+  id: '__root__' | '/' | '/destinations' | '/inquiry'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DestinationsRoute: typeof DestinationsRoute
   InquiryRoute: typeof InquiryRoute
-  InquirycopyRoute: typeof InquirycopyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/inquiry copy': {
-      id: '/inquiry copy'
-      path: '/inquiry copy'
-      fullPath: '/inquiry copy'
-      preLoaderRoute: typeof InquirycopyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/inquiry': {
       id: '/inquiry'
       path: '/inquiry'
@@ -106,7 +89,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DestinationsRoute: DestinationsRoute,
   InquiryRoute: InquiryRoute,
-  InquirycopyRoute: InquirycopyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

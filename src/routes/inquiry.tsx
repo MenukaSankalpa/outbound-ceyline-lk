@@ -51,6 +51,7 @@ function InquiryForm() {
     contact: "",
     destination: "",
     timing: "",
+    traveled: "", // ✅ ADD THIS
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -70,6 +71,7 @@ function InquiryForm() {
           email: form.email,
           contact: form.contact,
           destination: form.destination,
+          traveled: form.traveled,
           timing: form.timing,
         },
         "hRfcmdrqcFhv5t5xP",
@@ -215,6 +217,27 @@ function InquiryForm() {
                       placeholder="+94 XX XXX XXXX"
                       className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-[#F7F7F7] text-gray-800 text-sm focus:outline-none focus:border-[#1E90FF] focus:ring-1 focus:ring-[#1E90FF] transition-smooth"
                     />
+                  </div>
+
+                  {/* Traveled Abroad */}
+                  <div className="flex flex-col gap-1.5">
+                    <label className="text-xs uppercase tracking-widest text-gray-500 font-medium">Have you traveled abroad before? *</label>
+                    <div className="flex gap-6">
+                      {["No", "Yes"].map((option) => (
+                        <label key={option} className="flex items-center gap-2 cursor-pointer text-sm text-gray-700">
+                          <input
+                            type="radio"
+                            name="traveled"
+                            value={option}
+                            required
+                            checked={form.traveled === option}
+                            onChange={handleChange}
+                            className="accent-[#1E90FF] w-4 h-4"
+                          />
+                          {option}
+                        </label>
+                      ))}
+                    </div>
                   </div>
 
                   {/* Destination */}
