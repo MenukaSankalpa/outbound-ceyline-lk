@@ -104,10 +104,7 @@ function InquiryForm() {
               </p>
 
               <div className="flex flex-col gap-6">
-                <a
-                  href="tel:+94114511064"
-                  className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-smooth"
-                >
+                <div className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-smooth">
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center text-white flex-shrink-0"
                     style={{ background: "linear-gradient(135deg, #0a3d8f, #1E90FF)" }}
@@ -116,12 +113,16 @@ function InquiryForm() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-gray-400">Call us</p>
-                    <p className="text-[#0a3d8f] font-semibold text-lg">+94 11 4511064</p>
+                    <div className="flex flex-col gap-1 mt-1">
+                      <p className="text-[#0a3d8f] font-semibold text-lg">+94 11 4511064</p>
+                      <p className="text-[#0a3d8f] font-semibold text-lg">+94 76 8422000</p>
+                      <p className="text-[#0a3d8f] font-semibold text-lg">+94 77 2824362</p>
+                    </div>
                   </div>
-                </a>
+                </div>
 
                 <a
-                  href="mailto:travels@ceyline.lk"
+                  href="mailto:outbound@ceyline.lk"
                   className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-smooth"
                 >
                   <div
@@ -132,7 +133,7 @@ function InquiryForm() {
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-widest text-gray-400">Email us</p>
-                    <p className="text-[#0a3d8f] font-semibold text-lg">travels@ceyline.lk</p>
+                    <p className="text-[#0a3d8f] font-semibold text-lg">outbound@ceyline.lk</p>
                   </div>
                 </a>
 
